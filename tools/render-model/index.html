@@ -1,0 +1,58 @@
+<!doctype html><html><body style="margin:0;background:#000">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const P = ['Bassin_de_sechage','Bassins_decantation','Batiment_bloc_1','Batiment_bloc_2','Batiment_bloc_3','Batiments_terracotta','Centre_de_controle','Chambre_des_pompes','Clarificateurs','Cuves_blanches','Eau_sale_lavage','Enceinte','Espaces_verts','Filtration_coagulation','Fosse_vannes_LB','Lagunes','Lits_bacteriens','Parking','Portails','Pretraitement','Station_pompage','Vegetation','Voirie','Zone_UV_dalle_basse'];
+const HX = 289.7, HZ = 385.32;
+window.setup = async (W, H) => {
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: true });
+  r.setSize(W, H); r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap;
+  r.outputColorSpace = THREE.SRGBColorSpace; r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 0.9;
+  document.body.appendChild(r.domElement);
+  const scene = new THREE.Scene();
+  const pm = new THREE.PMREMGenerator(r); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.18;
+  const cam = new THREE.OrthographicCamera(-HX, HX, HZ, -HZ, 1, 2000);
+  cam.position.set(0, 1000, 0); cam.up.set(0, 0, -1); cam.lookAt(0, 0, 0);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8070, 1.0));
+  const sun = new THREE.DirectionalLight(0xfff1e0, 2.6);
+  sun.position.set(-250, 500, -180); sun.castShadow = true;
+  Object.assign(sun.shadow.camera, { left: -450, right: 450, top: 450, bottom: -450, near: 1, far: 1500 });
+  sun.shadow.mapSize.set(8192, 8192); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.4;
+  scene.add(sun);
+  const draco = new DRACOLoader().setDecoderPath('./draco/');
+  const loader = new GLTFLoader().setDRACOLoader(draco);
+  const parts = {};
+  for (const id of P) {
+    const g = await loader.loadAsync(`./models/${id}.glb`);
+    g.scene.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true;
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      mats.forEach(m => { window._mats = window._mats || {}; window._mats[(o.name||'')+' | '+(m.name||'')] = [m.type, m.color && m.color.getHexString(), m.transmission, m.opacity, m.metalness, m.roughness]; });
+      if (/^LG_Eau/.test(o.name)) {
+        o.material = new THREE.MeshStandardMaterial({ color: 0x5d87a0, roughness: 0.35, metalness: 0.0 });
+        o.castShadow = false;
+      } } });
+    parts[id] = g.scene; scene.add(g.scene);
+  }
+  window._s = { r, scene, cam, parts, sun };
+  return Object.keys(parts).length;
+};
+window.beauty = () => { const { r, scene, cam } = _s; scene.background = null; r.setClearColor(0x000000, 0); r.render(scene, cam); return r.domElement.toDataURL('image/png'); };
+const white = new THREE.MeshBasicMaterial({ color: 0xffffff });
+window.mask = (ids) => {
+  const { r, scene, cam, parts, sun } = _s;
+  scene.background = new THREE.Color(0x000000);
+  const saved = [];
+  for (const [id, o] of Object.entries(parts)) {
+    o.visible = ids.includes(id);
+    o.traverse(m => { if (m.isMesh) { saved.push([m, m.material]); m.material = white; } });
+  }
+  r.render(scene, cam);
+  const url = r.domElement.toDataURL('image/png');
+  saved.forEach(([m, mat]) => (m.material = mat));
+  Object.values(parts).forEach(o => (o.visible = true));
+  return url;
+};
+</script></body></html>

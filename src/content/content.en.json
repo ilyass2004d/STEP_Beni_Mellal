@@ -1,0 +1,886 @@
+{
+ "version": 1,
+ "hero": {
+  "eyebrow": "Béni Mellal, Morocco",
+  "title": "Water in the making",
+  "subtitle": "Explore the wastewater treatment plant of Béni Mellal.",
+  "description": "A close look at the infrastructure, units and processes involved in wastewater management.",
+  "primaryCta": "Explore the plant",
+  "secondaryCta": "Follow the journey",
+  "media": {
+   "src": "/media/video/hero-origine.mp4",
+   "alt": "From a domestic tap to an underground pipe: opening sequence.",
+   "kind": "illustration"
+  }
+ },
+ "chapters": [
+  {
+   "id": "origine",
+   "number": "01",
+   "eyebrow": "At the source",
+   "title": "An everyday gesture",
+   "text": "It all starts with an everyday gesture. After use, water enters an invisible but essential journey.",
+   "secondary": "Kitchen, bathroom and toilet water: domestic wastewater carries fats, detergents, organic matter and germs.",
+   "media": {
+    "src": "/media/video/ch01-robinet.mp4",
+    "alt": "Water running from a tap into a basin.",
+    "kind": "illustration"
+   },
+   "visible": true
+  },
+  {
+   "id": "reseau",
+   "number": "02",
+   "eyebrow": "Under the city",
+   "title": "An invisible journey",
+   "text": "Under the streets of Béni Mellal, the sewer network collects wastewater and carries it to the treatment facilities.",
+   "secondary": "The network serving Béni Mellal and Mghila is a combined system: domestic wastewater and rainwater flow together to the plant inlet.",
+   "media": {
+    "src": "/media/video/ch02-reseau.mp4",
+    "alt": "Inside an underground pipe with flowing water.",
+    "kind": "illustration"
+   },
+   "visible": true
+  },
+  {
+   "id": "station",
+   "number": "03",
+   "eyebrow": "The plant",
+   "title": "Arrival",
+   "text": "At the end of the journey, the plant brings together units and equipment whose functions form a treatment line.",
+   "secondary": "The plant covers about 18 ha, nearly 2 km from the city, along provincial road P3219.",
+   "media": {
+    "src": "/media/renders/vue-filiere",
+    "alt": "3D model aerial view: circular trickling filters, basins, buildings and roads of the plant.",
+    "kind": "rendu",
+    "caption": "3D model render by Ilyass Zerqtouni."
+   },
+   "visible": true
+  },
+  {
+   "id": "apres",
+   "number": "06",
+   "eyebrow": "After treatment",
+   "title": "Understanding water",
+   "text": "Understanding wastewater treatment also means better understanding the issues of water, the environment and territories.",
+   "media": {
+    "src": "/media/photos/labo-echantillons",
+    "alt": "Four beakers in a row at the plant laboratory, from cloudy to clear water.",
+    "kind": "photo",
+    "caption": "Samples taken at different treatment stages, plant laboratory, visit of 10/12/2025."
+   },
+   "visible": true
+  }
+ ],
+ "stages": [
+  {
+   "id": "pretraitement",
+   "label": "Pretreatment"
+  },
+  {
+   "id": "primaire",
+   "label": "Primary treatment"
+  },
+  {
+   "id": "secondaire",
+   "label": "Secondary treatment"
+  },
+  {
+   "id": "maturation",
+   "label": "Maturation"
+  },
+  {
+   "id": "tertiaire",
+   "label": "Tertiary treatment"
+  },
+  {
+   "id": "boues",
+   "label": "Sludge line"
+  },
+  {
+   "id": "supervision",
+   "label": "Supervision"
+  },
+  {
+   "id": "annexe",
+   "label": "Ancillary"
+  }
+ ],
+ "components": [
+  {
+   "id": "pretraitement",
+   "code": "01",
+   "order": 1,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Inlet and pretreatment",
+   "technicalName": "Inlet structure, screening, lifting, metering, grit removal",
+   "stage": "pretraitement",
+   "verification": "documente",
+   "shortDescription": "The head of the plant: raw water is cleared of bulky waste and sand before any treatment.",
+   "role": "Raw water first passes through coarse screening and then fine screening, which retain solid waste collected in a skip. It is then lifted, metered by a flow meter and de-gritted in a vortex grit chamber; the extracted sand goes through a classifier before removal.",
+   "details": "A by-pass upstream of the screens can divert part of the flow during exceptional peaks or maintenance. In wet weather, the combined sewer network brings clay particles that increase the suspended solids load.",
+   "components": [
+    "Coarse screen",
+    "Fine screen",
+    "Waste skip",
+    "Lifting",
+    "Flow meter",
+    "Vortex grit chamber",
+    "Sand classifier",
+    "By-pass"
+   ],
+   "modelParts": [
+    "Pretraitement"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/degrillage",
+     "alt": "Screen gantry above a channel, with access stairs.",
+     "kind": "photo",
+     "caption": "Screening."
+    },
+    {
+     "src": "/media/photos/degrillage-benne",
+     "alt": "Skip filled with waste retained by the screen.",
+     "kind": "photo",
+     "caption": "Waste retained by screening."
+    },
+    {
+     "src": "/media/photos/dessableur",
+     "alt": "Blue mixer above the grit chamber.",
+     "kind": "photo",
+     "caption": "Grit chamber."
+    },
+    {
+     "src": "/media/photos/classificateur",
+     "alt": "Inclined stainless-steel sand classifier.",
+     "kind": "photo",
+     "caption": "Sand classifier."
+    }
+   ],
+   "parameters": [
+    {
+     "label": "Coarse screening",
+     "value": "14 mm",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Fine screening",
+     "value": "8 to 12 mm",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Grit chamber type",
+     "value": "Vortex",
+     "source": "rapport-visite"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite"
+   ],
+   "note": "No dedicated render of this unit is available yet.",
+   "shortName": "Pretreatment"
+  },
+  {
+   "id": "bassins-anaerobies",
+   "code": "02",
+   "order": 2,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Anaerobic basins",
+   "technicalName": "Primary settling",
+   "stage": "primaire",
+   "verification": "documente",
+   "shortDescription": "Four large basins in series where suspended solids settle and organic matter breaks down without oxygen.",
+   "role": "The long retention time lets particles settle at the bottom of the basins. The particulate and organic load is reduced before biological treatment, which relieves the secondary stage.",
+   "details": "Operation in series keeps treatment running when one basin is under maintenance. Settled sludge is sent to the drying beds.",
+   "components": [
+    "4 basins in series"
+   ],
+   "modelParts": [],
+   "contextParts": [
+    "Lagunes"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/bassins-anaerobies",
+     "alt": "Basin with a dark surface, edged with riprap.",
+     "kind": "photo",
+     "caption": "Anaerobic basin."
+    },
+    {
+     "src": "/media/photos/bassins-anaerobies-2",
+     "alt": "View of a basin from the service track.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/lagunes",
+    "alt": "Aerial render of the model: the basins of the plant.",
+    "kind": "rendu"
+   },
+   "parameters": [
+    {
+     "label": "Number of basins",
+     "value": "4"
+    },
+    {
+     "label": "Length",
+     "value": "100 m",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Width",
+     "value": "50 m",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Depth",
+     "value": "3.80 m",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Unit volume",
+     "value": "19,000 m³",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Total volume",
+     "value": "76,000 m³",
+     "source": "rapport-visite"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite",
+    "plan-sig"
+   ],
+   "note": "The synoptic diagram calls them “anaerobic basins”; the visit report describes them as primary settling basins, and the GIS plan names them “Bassin de décantation primaire”.",
+   "shortName": "Anaerobic basins"
+  },
+  {
+   "id": "fosse-vannes-lb",
+   "code": "03",
+   "order": 3,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Valve pit of the trickling filters",
+   "stage": "secondaire",
+   "verification": "partiel",
+   "shortDescription": "A technical pit where a main pipe branches into tappings fitted with valves.",
+   "role": "Located next to the trickling filters (“LB”), the pit groups the main pipe, its tappings, the valves and the related electrical boxes.",
+   "components": [
+    "Main pipe",
+    "Tappings",
+    "Valves",
+    "Electrical boxes"
+   ],
+   "modelParts": [
+    "Fosse_vannes_LB"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/fosse-vannes",
+     "alt": "Concrete pit with a galvanised pipe and a row of blue valves.",
+     "kind": "photo",
+     "caption": "Pipe and valves in the pit."
+    }
+   ],
+   "render": {
+    "src": "/media/renders/fosse-vannes",
+    "alt": "Model render: long pit with blue valves and gantries.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "photos-visite"
+   ],
+   "note": "Its exact role in feeding the trickling filters is not detailed in the available documentation.",
+   "shortName": "Valve pit"
+  },
+  {
+   "id": "lits-bacteriens",
+   "code": "04",
+   "order": 4,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Trickling filters",
+   "technicalName": "Bacterial filters, aerobic biological treatment",
+   "stage": "secondaire",
+   "verification": "documente",
+   "shortDescription": "Four circular towers where a bacterial biofilm breaks down dissolved organic matter.",
+   "role": "Water is spread by a rotating distributor over a packing medium. Micro-organisms fixed on this medium as a biofilm break down organic matter in the presence of oxygen; part of it becomes water and carbon dioxide, the rest forms biomass removed as sludge.",
+   "details": "Water passes through the filter very quickly, in a few minutes. Dosing conditions control how the biofilm detaches, and therefore the stability of the treatment.",
+   "components": [
+    "Rotating distributor",
+    "Packing medium",
+    "Feed pumps with protection filters",
+    "Recycling valves"
+   ],
+   "modelParts": [
+    "Lits_bacteriens"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/lits-exterieur",
+     "alt": "Two large terracotta-coloured cylindrical towers.",
+     "kind": "photo",
+     "caption": "The trickling filters seen from the road."
+    },
+    {
+     "src": "/media/photos/lits-garnissage",
+     "alt": "Top of a trickling filter: black packing and distributor arm.",
+     "kind": "photo",
+     "caption": "Packing and distributor."
+    }
+   ],
+   "render": {
+    "src": "/media/renders/lits-bacteriens",
+    "alt": "Model render: four circular trickling filters surrounded by vegetation.",
+    "kind": "rendu"
+   },
+   "parameters": [
+    {
+     "label": "Number of filters",
+     "value": "4, in parallel",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Feed",
+     "value": "16 pumps with protection filters and recycling valves",
+     "source": "rapport-visite"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite"
+   ]
+  },
+  {
+   "id": "clarificateurs",
+   "code": "05",
+   "order": 5,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Clarifiers",
+   "technicalName": "Secondary settling",
+   "stage": "secondaire",
+   "verification": "partiel",
+   "shortDescription": "Circular tanks where water separates from the sludge formed by biological treatment.",
+   "role": "At rest, the sludge, heavier than water, settles at the bottom while a rotating bridge travels around the tank. Clarified water overflows the weir plates towards the next stage.",
+   "details": "The line includes a sludge pumping station and a scum pumping station; the sludge is sent back to the anaerobic basins.",
+   "components": [
+    "Rotating bridge",
+    "Weir plates",
+    "Sludge pumping",
+    "Scum pumping"
+   ],
+   "modelParts": [
+    "Clarificateurs"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/clarificateur",
+     "alt": "Circular clarifier with dark water, scraper bridge in the foreground.",
+     "kind": "photo",
+     "caption": "Clarifier."
+    },
+    {
+     "src": "/media/photos/clarificateur-deversoir",
+     "alt": "Notched weir plate around a clarifier.",
+     "kind": "photo",
+     "caption": "Weir plate."
+    }
+   ],
+   "render": {
+    "src": "/media/renders/clarificateur",
+    "alt": "Model render: clarifier and its rotating bridge.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "rapport-visite",
+    "photos-visite",
+    "plan-sig"
+   ],
+   "note": "The model and the GIS plan include three circular tanks in this group (two clarifiers and a small clarifier); the synoptic diagram shows two. The number and name of each remain to be confirmed."
+  },
+  {
+   "id": "maturation",
+   "code": "06",
+   "order": 6,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Maturation ponds",
+   "technicalName": "Polishing lagoons",
+   "stage": "maturation",
+   "verification": "documente",
+   "shortDescription": "Four large lagoons that refine the quality of the clarified water.",
+   "role": "At the end of lagoon treatment, these ponds contribute to the disinfection of the effluent and reduce residual pollution, especially particulate and organic.",
+   "details": "Their design aims to limit odours and to prevent plant growth on the banks, in order to reduce algae development.",
+   "components": [
+    "4 lagoons",
+    "Riprap banks"
+   ],
+   "modelParts": [],
+   "contextParts": [
+    "Lagunes"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/maturation",
+     "alt": "Large calm lagoon edged with a riprap bank.",
+     "kind": "photo",
+     "caption": "Maturation pond."
+    },
+    {
+     "src": "/media/photos/maturation-2",
+     "alt": "Riprap bank of a maturation pond, mountains in the background.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/lagunes",
+    "alt": "Aerial render of the model: the maturation ponds.",
+    "kind": "rendu"
+   },
+   "parameters": [
+    {
+     "label": "Number of ponds",
+     "value": "4"
+    },
+    {
+     "label": "Area",
+     "value": "≈ 6.2 ha",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Measured area (GIS plan)",
+     "value": "6.22 ha",
+     "source": "plan-sig"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite",
+    "plan-sig"
+   ],
+   "shortName": "Maturation ponds"
+  },
+  {
+   "id": "station-pompage",
+   "code": "07",
+   "order": 7,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Pumping station and analysers",
+   "stage": "tertiaire",
+   "verification": "partiel",
+   "shortDescription": "Pumping, distribution and continuous water-quality measurement before tertiary treatment.",
+   "role": "The visit report describes, upstream of tertiary treatment, a lifting station equipped with an ultrasonic flow meter and sensors that continuously measure turbidity, suspended solids, electrical conductivity and pH. These data are sent to the supervision system of the control centre.",
+   "components": [
+    "Ultrasonic flow meter",
+    "Turbidity, SS, conductivity and pH sensors",
+    "Distribution chambers"
+   ],
+   "modelParts": [
+    "Station_pompage"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/analyseurs",
+     "alt": "Row of sheltered analysers, probes dipping into a channel.",
+     "kind": "photo",
+     "caption": "Online analysers."
+    },
+    {
+     "src": "/media/photos/analyseur-ecran",
+     "alt": "Analyser screen showing a reading.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/station-pompage",
+    "alt": "Model render: pumping station under a green steel frame.",
+    "kind": "rendu"
+   },
+   "parameters": [
+    {
+     "label": "Continuous measurements",
+     "value": "Flow (ultrasonic), turbidity, SS, conductivity, pH",
+     "source": "rapport-visite"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite"
+   ],
+   "note": "The exact match between this part of the model and the “lifting station” of the report remains to be confirmed.",
+   "shortName": "Pumping station"
+  },
+  {
+   "id": "filtration-coagulation",
+   "code": "08",
+   "order": 8,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Coagulation, flocculation and filtration",
+   "technicalName": "Physico-chemical tertiary treatment",
+   "stage": "tertiaire",
+   "verification": "documente",
+   "shortDescription": "The final polishing: the finest particles are clumped together and then retained by sand filters.",
+   "role": "Ferric chloride (FeCl₃) and powdered activated carbon are injected to destabilise colloidal particles and adsorb micropollutants. The particles then gather into flocs, and the water passes through sand filters.",
+   "details": "The sand filters are run in alternation so treatment continues while they are cleaned. Washing uses treated water; the dirty wash water is sent back to the head of the plant.",
+   "components": [
+    "Ferric chloride dosing",
+    "Powdered activated carbon",
+    "Coagulators",
+    "Sand filters",
+    "Valve chamber"
+   ],
+   "modelParts": [
+    "Filtration_coagulation"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/tertiaire-bassins",
+     "alt": "Stirred tank with green railings and mixer motor.",
+     "kind": "photo",
+     "caption": "Tertiary treatment tanks."
+    },
+    {
+     "src": "/media/photos/tertiaire-canal",
+     "alt": "Concrete channel with parallel troughs and foamy water.",
+     "kind": "photo"
+    },
+    {
+     "src": "/media/photos/tertiaire-galerie",
+     "alt": "Technical gallery with pipes and valves.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/filtration",
+    "alt": "Model render: filtration building and coagulators.",
+    "kind": "rendu"
+   },
+   "parameters": [
+    {
+     "label": "Reagents",
+     "value": "Ferric chloride (FeCl₃), powdered activated carbon",
+     "source": "rapport-visite"
+    },
+    {
+     "label": "Sand filters",
+     "value": "10, run in alternation",
+     "source": "rapport-visite"
+    }
+   ],
+   "sources": [
+    "rapport-visite",
+    "photos-visite",
+    "plan-sig"
+   ],
+   "note": "The attribution of each photograph to a specific tertiary unit remains to be checked.",
+   "shortName": "Filtration"
+  },
+  {
+   "id": "zone-uv",
+   "code": "09",
+   "order": 9,
+   "visible": true,
+   "inNarrative": false,
+   "name": "UV area",
+   "stage": "tertiaire",
+   "verification": "partiel",
+   "shortDescription": "Ultraviolet modules installed above a channel.",
+   "role": "The visit photographs show UV modules placed on a channel. Ultraviolet radiation is one of the water disinfection methods mentioned in the visit report.",
+   "components": [
+    "UV modules",
+    "Channel"
+   ],
+   "modelParts": [
+    "Zone_UV_dalle_basse"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/uv",
+     "alt": "Stainless-steel UV modules on a channel, gratings around.",
+     "kind": "photo",
+     "caption": "UV modules."
+    }
+   ],
+   "render": {
+    "src": "/media/renders/zone-uv",
+    "alt": "Model render: low slab of the UV area.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "photos-visite",
+    "rapport-visite"
+   ],
+   "note": "The exact position of this step in the treatment line is not described in the available documentation."
+  },
+  {
+   "id": "eau-sale-lavage",
+   "code": "10",
+   "order": 10,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Dirty wash water tank",
+   "stage": "tertiaire",
+   "verification": "documente",
+   "shortDescription": "It collects the water used to clean the sand filters.",
+   "role": "Water from filter washing is collected here, then sent back upstream to the primary treatment to be treated again.",
+   "components": [],
+   "modelParts": [
+    "Eau_sale_lavage"
+   ],
+   "photos": [],
+   "render": {
+    "src": "/media/renders/eau-sale",
+    "alt": "Model render: rectangular dirty wash water tank.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "rapport-visite",
+    "plan-sig"
+   ],
+   "shortName": "Wash water"
+  },
+  {
+   "id": "lits-sechage",
+   "code": "11",
+   "order": 11,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Sludge drying beds",
+   "stage": "boues",
+   "verification": "documente",
+   "shortDescription": "Sludge from settling is dewatered naturally here.",
+   "role": "Sludge extracted from the anaerobic basins is spread here and loses its water by natural dewatering. It is then generally sent to the solid waste stream.",
+   "components": [
+    "Drying cells"
+   ],
+   "modelParts": [
+    "Bassin_de_sechage"
+   ],
+   "photos": [],
+   "render": {
+    "src": "/media/renders/sechage",
+    "alt": "Model render: sludge drying cells with cracked ground.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "rapport-visite",
+    "plan-sig"
+   ],
+   "note": "No photograph of this unit has been identified with certainty yet. The GIS plan counts 30 cells.",
+   "shortName": "Drying beds"
+  },
+  {
+   "id": "centre-controle",
+   "code": "12",
+   "order": 12,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Control centre",
+   "stage": "supervision",
+   "verification": "documente",
+   "shortDescription": "The supervision post from which treatment is operated.",
+   "role": "Sensor readings are transmitted here continuously. Tertiary treatment is operated from a control room equipped with electric valves, to manage flows and reagent doses.",
+   "components": [
+    "Supervision screen",
+    "Control room"
+   ],
+   "modelParts": [
+    "Centre_de_controle"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/centre-controle",
+     "alt": "Control room with workstations and a large window.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/centre-controle",
+    "alt": "Model render: control centre building with glazed balconies.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "rapport-visite",
+    "photos-visite",
+    "plan-sig"
+   ],
+   "shortName": "Control centre"
+  },
+  {
+   "id": "chambre-pompes",
+   "code": "14",
+   "order": 13,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Pump house",
+   "stage": "annexe",
+   "verification": "a-documenter",
+   "shortDescription": "Technical building housing pumps and their pipes.",
+   "components": [],
+   "modelParts": [
+    "Chambre_des_pompes"
+   ],
+   "photos": [],
+   "render": {
+    "src": "/media/renders/chambre-pompes",
+    "alt": "Model render: façade of the pump house.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "plan-sig"
+   ],
+   "shortName": "Pump house"
+  },
+  {
+   "id": "cuves",
+   "code": "15",
+   "order": 14,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Storage tanks",
+   "stage": "annexe",
+   "verification": "a-documenter",
+   "shortDescription": "Group of white vertical tanks next to the technical buildings.",
+   "components": [],
+   "modelParts": [
+    "Cuves_blanches"
+   ],
+   "photos": [],
+   "render": {
+    "src": "/media/renders/cuves",
+    "alt": "Model render: white vertical tanks.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [],
+   "shortName": "Tanks"
+  },
+  {
+   "id": "batiments",
+   "code": "16",
+   "order": 15,
+   "visible": true,
+   "inNarrative": false,
+   "name": "Technical and ancillary buildings",
+   "stage": "annexe",
+   "verification": "a-documenter",
+   "shortDescription": "Terracotta buildings spread across the site.",
+   "components": [],
+   "modelParts": [
+    "Batiments_terracotta",
+    "Batiment_bloc_1",
+    "Batiment_bloc_2",
+    "Batiment_bloc_3"
+   ],
+   "photos": [
+    {
+     "src": "/media/photos/batiments",
+     "alt": "Brick-coloured technical building in the rain.",
+     "kind": "photo"
+    }
+   ],
+   "render": {
+    "src": "/media/renders/batiments",
+    "alt": "Model render: terracotta blocks.",
+    "kind": "rendu"
+   },
+   "parameters": [],
+   "sources": [
+    "photos-visite"
+   ],
+   "shortName": "Ancillary buildings"
+  }
+ ],
+ "facts": [
+  {
+   "label": "Area (GIS plan)",
+   "value": "17.92 ha",
+   "source": "plan-sig"
+  },
+  {
+   "label": "Sewer network",
+   "value": "Combined",
+   "source": "rapport-visite"
+  },
+  {
+   "label": "Municipalities served",
+   "value": "Béni Mellal and Mghila",
+   "source": "rapport-visite"
+  },
+  {
+   "label": "Model extent",
+   "value": "579 × 771 m",
+   "source": "maquette"
+  }
+ ],
+ "sources": [
+  {
+   "id": "rapport-visite",
+   "label": "Visit report of the Béni Mellal wastewater treatment plant",
+   "detail": "F. Jedouane and I. Zerqtouni, supervised by Prof. A. Arioua. FST Béni Mellal, Sultan Moulay Slimane University, 2025-2026."
+  },
+  {
+   "id": "photos-visite",
+   "label": "Photographs from the educational visit",
+   "detail": "Béni Mellal wastewater treatment plant, 10/12/2025."
+  },
+  {
+   "id": "maquette",
+   "label": "3D model of the Béni Mellal WWTP",
+   "detail": "Ilyass Zerqtouni. Export of 28/10/2026, 1 unit = 1 metre."
+  },
+  {
+   "id": "plan-sig",
+   "label": "GIS plan of the plant",
+   "detail": "Produced from satellite imagery and the field visit, as part of writing the report. Merchich / Nord Maroc system (EPSG:26191)."
+  }
+ ],
+ "about": {
+  "title": "A model, a journey",
+  "text": "This website is a digital visualization and interactive presentation project. It offers an educational reading of the Béni Mellal wastewater treatment plant based on a 3D model, visit photographs and the available documentation.",
+  "signature": "3D model and digital experience design: Ilyass Zerqtouni",
+  "disclaimer": "The plant is a public facility whose design, construction and operation are the responsibility of its owners and operators. This website is not its official documentation: descriptions are educational and every technical statement refers to its source.",
+  "credits": [
+   {
+    "role": "3D model and digital experience design",
+    "name": "Ilyass Zerqtouni"
+   },
+   {
+    "role": "Visit report",
+    "name": "Fathia Jedouane and Ilyass Zerqtouni"
+   },
+   {
+    "role": "Academic supervision",
+    "name": "Prof. Abdelkrim Arioua, FST Béni Mellal"
+   },
+   {
+    "role": "Visit photographs",
+    "name": "Educational visit of 10/12/2025"
+   }
+  ]
+ },
+ "sections": {
+  "hero": true,
+  "parcours": true,
+  "explorer": true,
+  "ouvrages": false,
+  "apres": true,
+  "apropos": true
+ }
+}
